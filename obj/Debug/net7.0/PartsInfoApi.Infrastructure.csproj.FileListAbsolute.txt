@@ -1,0 +1,17 @@
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\bin\Debug\net7.0\PartsInfoApi.Infrastructure.deps.json
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\bin\Debug\net7.0\PartsInfoApi.Infrastructure.runtimeconfig.json
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\bin\Debug\net7.0\PartsInfoApi.Infrastructure.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\bin\Debug\net7.0\PartsInfoApi.Infrastructure.pdb
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\bin\Debug\net7.0\PartsInfoApi.core.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\bin\Debug\net7.0\PartsInfoApi.core.pdb
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.AssemblyInfo.cs
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.csproj.CopyComplete
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\refint\PartsInfoApi.Infrastructure.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.pdb
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\PartsInfoApi.Infrastructure.genruntimeconfig.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi\PartsInfoApi.Infrastructure\obj\Debug\net7.0\ref\PartsInfoApi.Infrastructure.dll
