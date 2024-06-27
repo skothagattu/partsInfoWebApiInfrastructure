@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PartsInfoWebApi.Models;
+using PartsInfoWebApi.core.Models;
+using PartsInfoWebApi.Core.Models;
 
 namespace PartsInfoWebApi.Infrastructure
 {
@@ -11,6 +12,9 @@ namespace PartsInfoWebApi.Infrastructure
         }
 
         public DbSet<ThreeLetterCode> ThreeLetterCode { get; set; }
+        public DbSet<SubLog> SubLog { get; set; }
+        public DbSet<D03numbers> D03numbers { get; set; }
+        public DbSet<DWGnumbers> DWGnumbers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +40,43 @@ namespace PartsInfoWebApi.Infrastructure
                 entity.Property(e => e.FOB).HasMaxLength(50);
                 entity.Property(e => e.NOTES).HasMaxLength(500);
             });
+
+            modelBuilder.Entity<SubLog>(entity =>
+            {
+                entity.HasKey(e => e.NO);
+                entity.Property(e => e.NO).HasMaxLength(50);
+                entity.Property(e => e.PART_NO).HasMaxLength(50);
+                entity.Property(e => e.DESC).HasMaxLength(50);
+                entity.Property(e => e.REQ_BY).HasMaxLength(50);
+                entity.Property(e => e.REQ_DATE).HasMaxLength(50);
+                entity.Property(e => e.ASSIGN).HasMaxLength(50);
+                entity.Property(e => e.ACCEPT).HasMaxLength(50);
+                entity.Property(e => e.REJECT).HasMaxLength(50);
+                entity.Property(e => e.DATE).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<D03numbers>(entity =>
+            {
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.ID).HasMaxLength(50);
+                entity.Property(e => e.DESCRIPTION).HasMaxLength(50);
+                entity.Property(e => e.BL_NUMBER).HasMaxLength(50);
+                entity.Property(e => e.PANEL_DWG).HasMaxLength(50);
+                entity.Property(e => e.WHO).HasMaxLength(50);
+                entity.Property(e => e.START_DATE).HasMaxLength(50);
+                entity.Property(e => e.MODEL).HasMaxLength(50);
+            });
+            modelBuilder.Entity<DWGnumbers>(entity =>
+            {
+                entity.HasKey(e => e.NO);
+                entity.Property(e => e.PREFIX).HasMaxLength(50);
+                entity.Property(e => e.NO).HasMaxLength(50);
+                entity.Property(e => e.DESC).HasMaxLength(50);
+                entity.Property(e => e.MODEL).HasMaxLength(50);
+                entity.Property(e => e.ORIG).HasMaxLength(50);
+                entity.Property(e => e.DATE).HasMaxLength(50);
+            });
         }
     }
 }
+

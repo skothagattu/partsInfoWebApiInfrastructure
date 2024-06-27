@@ -1,0 +1,17 @@
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\bin\Release\net7.0\PartsInfoWebApi.infrastructure.deps.json
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\bin\Release\net7.0\PartsInfoWebApi.infrastructure.runtimeconfig.json
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\bin\Release\net7.0\PartsInfoWebApi.infrastructure.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\bin\Release\net7.0\PartsInfoWebApi.infrastructure.pdb
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\bin\Release\net7.0\PartsInfoWebApi.core.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\bin\Release\net7.0\PartsInfoWebApi.core.pdb
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.csproj.AssemblyReference.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.AssemblyInfoInputs.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.AssemblyInfo.cs
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.csproj.CopyComplete
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\refint\PartsInfoWebApi.infrastructure.dll
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.pdb
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\PartsInfoWebApi.infrastructure.genruntimeconfig.cache
+C:\Users\skothagattu\AndroidStudioProjects\PartsInfoApi Project\PartsInfoWebApi.infrastructure\obj\Release\net7.0\ref\PartsInfoWebApi.infrastructure.dll
