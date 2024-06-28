@@ -18,6 +18,9 @@ namespace PartsInfoWebApi.Infrastructure.DIExtensions
             services.AddScoped<IThreeLetterCodeRepository, ThreeLetterCodeRepository>();
             services.AddScoped<ISubLogRepository, SubLogRepository>();
             services.AddScoped<ID03numberRepository, D03numberRepository>();
+            services.AddScoped<ICabAireDWGNumberRepository, CabAireDWGNumberRepository>();
+            services.AddScoped<IEcoLogRepository, EcoLogRepository>();
+            services.AddScoped<IEcrLogRepository, EcrLogRepository>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("PartsInfoWebApi")));
 

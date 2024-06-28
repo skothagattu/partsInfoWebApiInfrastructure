@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PartsInfoWebApi.core.Models;
 using PartsInfoWebApi.Core.Models;
+using System.Drawing;
 
 namespace PartsInfoWebApi.Infrastructure
 {
@@ -15,6 +16,10 @@ namespace PartsInfoWebApi.Infrastructure
         public DbSet<SubLog> SubLog { get; set; }
         public DbSet<D03numbers> D03numbers { get; set; }
         public DbSet<DWGnumbers> DWGnumbers { get; set; }
+
+        public DbSet<CabAireDWGNumber> CabAireDWGNumbers { get; set; }
+        public DbSet<EcoLog> EcoLog { get; set; }
+        public DbSet<EcrLog> EcrLog { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -75,6 +80,38 @@ namespace PartsInfoWebApi.Infrastructure
                 entity.Property(e => e.MODEL).HasMaxLength(50);
                 entity.Property(e => e.ORIG).HasMaxLength(50);
                 entity.Property(e => e.DATE).HasMaxLength(50);
+            });
+            modelBuilder.Entity<CabAireDWGNumber>(entity =>
+            {
+                entity.HasKey(e => e.NO);
+                entity.Property(e => e.NO).ValueGeneratedNever();
+                entity.Property(e => e.PREFIX).HasMaxLength(50);
+                entity.Property(e => e.DESC).HasMaxLength(50);
+                entity.Property(e => e.MODEL).HasMaxLength(50);
+                entity.Property(e => e.ORIG).HasMaxLength(50);
+                entity.Property(e => e.DATE).HasMaxLength(50);
+            });
+            modelBuilder.Entity<EcoLog>(entity =>
+            {
+                entity.HasKey(e => e.NO);
+                entity.Property(e => e.NO).HasColumnType("int");
+                entity.Property(e => e.DESC).HasMaxLength(50);
+                entity.Property(e => e.MODEL).HasMaxLength(50);
+                entity.Property(e => e.ECR).HasMaxLength(50);
+                entity.Property(e => e.DATE_LOG).HasMaxLength(50);
+                entity.Property(e => e.NAME).HasMaxLength(50);
+                entity.Property(e => e.DATE_REL).HasMaxLength(50);
+            });
+            modelBuilder.Entity<EcrLog>(entity =>
+            {
+                entity.HasKey(e => e.NO);
+                entity.Property(e => e.NO).HasColumnType("int");
+                entity.Property(e => e.DESC).HasMaxLength(500);
+                entity.Property(e => e.MODEL).HasMaxLength(50);
+                entity.Property(e => e.DATE_LOG).HasMaxLength(50);
+                entity.Property(e => e.NAME).HasMaxLength(50);
+                entity.Property(e => e.ECO).HasMaxLength(50);
+                entity.Property(e => e.DATE_REL).HasMaxLength(50);
             });
         }
     }
