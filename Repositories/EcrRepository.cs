@@ -19,10 +19,16 @@ namespace PartsInfoWebApi.Infrastructure.Repositories
 
         public async Task<IEnumerable<EcrLog>> SearchAsync(string searchTerm)
         {
-            return await _context.EcrLog
-                .Where(e => e.DESC.Contains(searchTerm) || e.MODEL.Contains(searchTerm) || e.NAME.Contains(searchTerm) || e.ECO.Contains(searchTerm))
-                .OrderByDescending(e => e.NO)
-                .ToListAsync();
+            var startsWithSearchTerm = _context.EcrLog
+               .Where(t => t.NO.ToString().StartsWith(searchTerm))
+               .OrderByDescending(t => t.NO);
+
+            var containsSearchTerm = _context.EcrLog
+               .Where(t => t.NO.ToString().Contains(searchTerm))
+               .OrderByDescending(t => t.NO);
+
+            var result = await startsWithSearchTerm.Concat(containsSearchTerm).ToListAsync();
+            return result.Distinct().ToList();
         }
 
         public async Task<EcrLog> GetFirstAsync()
@@ -53,6 +59,11 @@ namespace PartsInfoWebApi.Infrastructure.Repositories
                 .Where(e => e.NO > currentNO)
                 .OrderBy(e => e.NO)
                 .FirstOrDefaultAsync();
+        }
+        public async Task UpdateAsync(EcrLog entity)
+        {
+            _context.Set<EcrLog>().Update(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<EcrLog>> GetAllSortedAsync()

@@ -18,18 +18,18 @@ namespace PartsInfoWebApi.Infrastructure.Repositories
             _context = dbContext;
         }
 
-        public async Task<IEnumerable<EcoLog>> SearchAsync(string searchTerm)
+       public async Task<IEnumerable<EcoLog>> SearchAsync(string searchTerm)
         {
             var startsWithSearchTerm = _context.EcoLog
-                .Where(t => t.DESC.StartsWith(searchTerm))
+                .Where(t => t.NO.ToString().StartsWith(searchTerm) )
                 .OrderByDescending(t => t.NO);
 
             var containsSearchTerm = _context.EcoLog
-                .Where(t => t.DESC.Contains(searchTerm) && !t.DESC.StartsWith(searchTerm))
+                .Where(t => t.NO.ToString().Contains(searchTerm) )
                 .OrderByDescending(t => t.NO);
 
             var result = await startsWithSearchTerm.Concat(containsSearchTerm).ToListAsync();
-            return result;
+            return result.Distinct().ToList();
         }
 
         public async Task<EcoLog> GetFirstAsync()
