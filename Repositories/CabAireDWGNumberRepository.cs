@@ -33,39 +33,44 @@ namespace PartsInfoWebApi.Infrastructure.Repositories
 
         public async Task<CabAireDWGNumber> GetFirstAsync()
         {
-            return await _context.CabAireDWGNumbers
-                .OrderByDescending(t => t.NO)
+            var result = await _context.CabAireDWGNumbers
+                .OrderBy(c => c.NO)
                 .FirstOrDefaultAsync();
+            return result;
         }
 
         public async Task<CabAireDWGNumber> GetLastAsync()
         {
-            return await _context.CabAireDWGNumbers
+            var result = await _context.CabAireDWGNumbers
                 .OrderBy(t => t.NO)
                 .FirstOrDefaultAsync();
+            return result;
         }
 
         public async Task<CabAireDWGNumber> GetNextAsync(int currentNO)
         {
-            return await _context.CabAireDWGNumbers
+            var result = await _context.CabAireDWGNumbers
                 .Where(t => t.NO < currentNO)
                 .OrderByDescending(t => t.NO)
                 .FirstOrDefaultAsync();
+            return result;
         }
 
         public async Task<CabAireDWGNumber> GetPreviousAsync(int currentNO)
         {
-            return await _context.CabAireDWGNumbers
+            var result = await _context.CabAireDWGNumbers
                 .Where(t => t.NO > currentNO)
                 .OrderBy(t => t.NO)
                 .FirstOrDefaultAsync();
+            return result;
         }
 
         public async Task<IEnumerable<CabAireDWGNumber>> GetAllSortedAsync()
         {
-            return await _context.CabAireDWGNumbers
+            var result = await _context.CabAireDWGNumbers
                 .OrderByDescending(t => t.NO)
                 .ToListAsync();
+            return result;
         }
     }
 }

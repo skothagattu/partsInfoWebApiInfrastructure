@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PartsInfoWebApi.core.Models;
+using PartsInfoWebApi.core.Models.DesignServices;
 using PartsInfoWebApi.Core.Models;
 using System.Drawing;
 
@@ -20,6 +21,9 @@ namespace PartsInfoWebApi.Infrastructure
         public DbSet<CabAireDWGNumber> CabAireDWGNumbers { get; set; }
         public DbSet<EcoLog> EcoLog { get; set; }
         public DbSet<EcrLog> EcrLog { get; set; }
+
+        public DbSet<CMI_DESC> CMI_DESC { get; set; }
+        public DbSet<CMI_VENDOR> CMI_VENDOR { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -84,7 +88,6 @@ namespace PartsInfoWebApi.Infrastructure
             modelBuilder.Entity<CabAireDWGNumber>(entity =>
             {
                 entity.HasKey(e => e.NO);
-                entity.Property(e => e.NO).ValueGeneratedNever();
                 entity.Property(e => e.PREFIX).HasMaxLength(50);
                 entity.Property(e => e.DESC).HasMaxLength(50);
                 entity.Property(e => e.MODEL).HasMaxLength(50);
@@ -112,6 +115,26 @@ namespace PartsInfoWebApi.Infrastructure
                 entity.Property(e => e.NAME).HasMaxLength(50);
                 entity.Property(e => e.ECO).HasMaxLength(50);
                 entity.Property(e => e.DATE_REL).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<CMI_DESC>(entity =>
+            {
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.ID).HasMaxLength(50);
+                entity.Property(e => e.CMINO).HasMaxLength(50);
+                entity.Property(e => e.DESCRIPTION).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<CMI_VENDOR>(entity =>
+            {
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.ID).HasMaxLength(50);
+                entity.Property(e => e.CMINO).HasMaxLength(50);
+                entity.Property(e => e.CODE).HasMaxLength(50);
+                entity.Property(e => e.MFGNO).HasMaxLength(50);
+                entity.Property(e => e.SUB).HasMaxLength(50);
+                entity.Property(e => e.DATE).HasMaxLength(50);
+                entity.Property(e => e.NOTES).HasMaxLength(50);
             });
         }
     }
