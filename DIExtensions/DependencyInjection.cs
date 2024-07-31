@@ -27,6 +27,7 @@ namespace PartsInfoWebApi.Infrastructure.DIExtensions
             services.AddScoped<ICMIDescRepository, CMIDescRepository>();
             services.AddScoped<ICMIVendorRepository, CMIVendorRepository>();
             services.AddScoped<ICMIDescVendorRepository, CMIDescVendorRepository>();
+            services.AddScoped<IStdPartIndexRepository, StdPartIndexRepository>();
 
 
 

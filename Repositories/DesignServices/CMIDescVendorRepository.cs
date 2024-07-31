@@ -119,7 +119,7 @@ namespace PartsInfoWebApi.infrastructure.Repositories.DesignServices
                             on desc.CMINO equals vendor.CMINO into vendorGroup
                         from v in vendorGroup.DefaultIfEmpty()
                         where v.DATE != null && v.DATE > date
-                        orderby desc.CMINO
+                        orderby v.MFGNO
                         select new CMIDescVendorDto
                         {
                             CMINO = desc.CMINO,
@@ -143,7 +143,7 @@ namespace PartsInfoWebApi.infrastructure.Repositories.DesignServices
                         join vendor in _context.CMI_VENDOR
                             on desc.CMINO equals vendor.CMINO into vendorGroup
                         from v in vendorGroup.DefaultIfEmpty()
-                        where v.DATE != null && v.DATE > date
+                        where v.DATE != null && v.DATE > date && v.MFGNO != null
                         select desc;
 
             return await query.CountAsync();

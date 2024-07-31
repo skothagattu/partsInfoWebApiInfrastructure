@@ -24,6 +24,7 @@ namespace PartsInfoWebApi.Infrastructure
 
         public DbSet<CMI_DESC> CMI_DESC { get; set; }
         public DbSet<CMI_VENDOR> CMI_VENDOR { get; set; }
+        public DbSet<StdPartIndex> StdPartIndex { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -135,6 +136,13 @@ namespace PartsInfoWebApi.Infrastructure
                 entity.Property(e => e.SUB).HasMaxLength(50);
                 entity.Property(e => e.DATE).HasMaxLength(50);
                 entity.Property(e => e.NOTES).HasMaxLength(50);
+            });
+            modelBuilder.Entity<StdPartIndex>(entity =>
+            {
+                entity.ToTable("STDPARTINDEX");
+                entity.HasKey(e => e.Number);
+                entity.Property(e => e.Number).HasColumnName("NUMBER").HasMaxLength(50);
+                entity.Property(e => e.Title).HasColumnName("TITLE").HasMaxLength(50);
             });
         }
     }
