@@ -26,6 +26,10 @@ namespace PartsInfoWebApi.Infrastructure
         public DbSet<CMI_VENDOR> CMI_VENDOR { get; set; }
         public DbSet<StdPartIndex> StdPartIndex { get; set; }
 
+        public DbSet<PromInfo> PromInfo { get; set; }
+        public DbSet<PromCurrentEco> PromCurrentEco { get; set; }
+        public DbSet<PromModel> PromModel { get; set; }
+        public DbSet<MB> MB { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -144,6 +148,57 @@ namespace PartsInfoWebApi.Infrastructure
                 entity.Property(e => e.Number).HasColumnName("NUMBER").HasMaxLength(50);
                 entity.Property(e => e.Title).HasColumnName("TITLE").HasMaxLength(50);
             });
+            modelBuilder.Entity<PromInfo>(entity =>
+            {
+                entity.ToTable("PROMINFO");
+                entity.HasKey(e => e.PromNo);
+                entity.Property(e => e.PromNo).HasColumnName("PROMNO");
+                entity.Property(e => e.LocA).HasColumnName("LOCA");
+                entity.Property(e => e.LocB).HasColumnName("LOCB");
+                entity.Property(e => e.PromB).HasColumnName("PROMB");
+                entity.Property(e => e.LocC).HasColumnName("LOCC");
+                entity.Property(e => e.PromC).HasColumnName("PROMC");
+                entity.Property(e => e.PromA).HasColumnName("PROMA");
+                entity.Property(e => e.LocD).HasColumnName("LOCD");
+                entity.Property(e => e.PromD).HasColumnName("PROMD");
+                entity.Property(e => e.RelDate).HasColumnName("RELDATE");
+                entity.Property(e => e.TypeA).HasColumnName("TYPEA");
+                entity.Property(e => e.TypeB).HasColumnName("TYPEB");
+                entity.Property(e => e.QtyB).HasColumnName("QTYB");
+            });
+
+            modelBuilder.Entity<PromCurrentEco>(entity =>
+            {
+                entity.ToTable("PROMECO");
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.PromNo).HasColumnName("PROMNO");
+                entity.Property(e => e.CurrentRev).HasColumnName("CURRENTREV");
+            });
+            modelBuilder.Entity<PromModel>(entity =>
+            {
+                entity.ToTable("PROMMODEL");
+                entity.Property(e => e.PromNo).HasColumnName("PROMNO");
+                entity.Property(e => e.Model).HasColumnName("MODEL");
+            });
+            modelBuilder.Entity<MB>(entity =>
+            {
+                entity.ToTable("MB");
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.ID).HasMaxLength(50);
+                entity.Property(e => e.DwgNo).HasColumnName("DWGNO").HasMaxLength(50);
+                entity.Property(e => e.RefItem).HasColumnName("REFITEM").HasMaxLength(50);
+                entity.Property(e => e.SIZE).HasMaxLength(50);
+                entity.Property(e => e.TYPE).HasMaxLength(50);
+                entity.Property(e => e.DESCRIPTION).HasMaxLength(100);
+                entity.Property(e => e.LOCATION).HasMaxLength(50);
+                entity.Property(e => e.MATLUSED).HasMaxLength(50);
+                entity.Property(e => e.OrigNo).HasColumnName("ORIGNO").HasMaxLength(50);
+                entity.Property(e => e.CutType).HasColumnName("CUTTYPE").HasMaxLength(50);
+                entity.Property(e => e.QtyPer).HasColumnName("QTYPER").HasMaxLength(50);
+                entity.Property(e => e.TESTED).HasMaxLength(50);
+                entity.Property(e => e.NOTES).HasMaxLength(500);
+            });
+
         }
     }
 }
